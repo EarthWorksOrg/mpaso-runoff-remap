@@ -1,0 +1,25 @@
+#!/bin/bash
+#PBS -N interp_rof
+#PBS -A UCSU0085
+#PBS -l walltime=00:20:00
+#PBS -q main  
+### Merge output and error files
+#PBS -j oe
+#PBS -k eod
+#PBS -l select=1:ncpus=4:mpiprocs=4:ompthreads=1
+### Send email on abort, begin and end
+#PBS -m abe
+### Specify mail recipient
+#PBS -M dazlich@colostate.edu
+
+export MPASO_ESMFFILE='../oQU015.250922/oQU015_ESMFmesh.250922.nc'
+export MPASO_WGTFILE='../oQU015.250922/wght_file_near_jra_qu015.nc'
+
+# command to generate weights
+mpiexec -n 4 /glade/u/apps/derecho/23.06/spack/opt/spack/esmf/8.5.0/cray-mpich/8.1.25/oneapi/2023.0.0/wadv/bin/ESMF_RegridWeightGen  \
+	-s./ll_025deg_ESMFmesh.nc \
+	-d $MPASO_ESMFFILE \
+	-w $MPASO_WGTFILE \
+	-m nearestdtos --src_loc center --dst_loc center
+
+
