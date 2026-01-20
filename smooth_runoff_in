@@ -1,0 +1,12 @@
+&smooth
+    filename_mapping_in  = "wght_file_near_jra_qu030.nc"
+    filename_mapping_out = "wght_file_jra_qu030.250922.nc"
+    filename_mpas_mesh   = "ocean.QU.030km.250922.nc"
+    filename_diagnostic  = "diagnostic.nc"
+    distanceLimit        = 150.0
+    stdDeviation         = 300.0
+    n_s_buffer           = 100000
+    outputDiagnostic     = .false.
+    filename_diagnostic  = "diagnostic.out"
+    diagnosticPointIndex = 1
+/
