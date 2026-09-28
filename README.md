@@ -23,3 +23,6 @@ gfortran -o smooth_runoff.out  -Inetcdf_inc_path -Lnetcdf_lib_path -lnetcdff -ln
 Generate the new smoothed runoff weights by running smooth_runoff/smooth_runoff.out. Edit smooth_runoff_in to set input and output files: filename_mapping_in is the modified initial generated remap file; filename_mapping_out is the new file with smoothed remap weights; filename_mpas_mesh is the MPAS-ocean mesh file. For high resolutions (15km and finer) distancelimit should be reduced or you may hit memory limits. This program can take days to run for higher resolutions.
 
 Transfer this file to the machine you will run EarthWorks on. You can set the model to use the generated remap file by using xmlchange to modify the ROF2OCN_LIQ_RMAPNAME and ROF2OCN_ICE_RMAPNAME variables to the filename.
+
+
+Special thanks to Adrian Turner of the LANL COSIM group for making the smooth_runoff code available.
