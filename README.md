@@ -25,4 +25,4 @@ Generate the new smoothed runoff weights by running smooth_runoff/smooth_runoff.
 Transfer this file to the machine you will run EarthWorks on. You can set the model to use the generated remap file by using xmlchange to modify the ROF2OCN_LIQ_RMAPNAME and ROF2OCN_ICE_RMAPNAME variables to the filename.
 
 
-Special thanks to Adrian Turner of the LANL COSIM group for making the smooth_runoff code available.
+Special thanks to Adrian Turner of the LANL COSIM group who wrote the smooth_runoff code.
