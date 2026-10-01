@@ -15,7 +15,7 @@ The next steps you will want to do on a local machine as some of the steps can c
 
 Transfer to your local machine the mpas-ocean esmf mesh file, the initial generated remap file, and the ocean domain mesh file (referred to in the mpas-ocean-inputdata repository)
 
-Modify the initial generated remap file with modify_dst.f90 (compile linking to netCDF). The user will be prompted for the runoff model, the initial generated remap file, and the MPAS-ocean mesh file.
+Modify the initial generated remap file with modify_dst.f90 (compile linking to netCDF). The user will be prompted for the runoff model, the initial generated remap file, and the MPAS-ocean mesh file. This step will also adjust the remap weights to insure conservative remapping.
 
 Smooth the runoff remap weights with smooth_runoff. Compile with netCDF. Example compilation:
 gfortran -o smooth_runoff.out  -Inetcdf_inc_path -Lnetcdf_lib_path -lnetcdff -lnetcdf smooth_runoff/src/smooth_runoff.F90
